@@ -6,32 +6,16 @@ using System.Threading.Tasks;
 
 namespace Week_Two_Challenges
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Please Enter Your Name:");
-        Greeter greeter = new Greeter();
-            string name = Console.ReadLine();
-            greeter.HelloMethod(name);
-            greeter.FarewellMethod(name);
-            greeter.TimedMethod();
-            Console.ReadLine();
-        }
-
-
-    }
-
     public class Greeter
     {
-        public void HelloMethod(string name)
+        public string HelloMethod(string name)
         {
-            Console.WriteLine($"Hello {name}");
+            return "hello " + name;
         }
 
-        public void FarewellMethod(string name)
+        public string FarewellMethod(string name)
         {
-            Console.WriteLine($"Farewell {name}");
+            return "farewell " + name;
         }
 
         public void TimedMethod()
@@ -39,9 +23,9 @@ namespace Week_Two_Challenges
             DateTime currentTime = new DateTime();
             currentTime = DateTime.Now;
 
-            if (currentTime.Hour > 12 && currentTime.Hour > 4)
+            if (currentTime.Hour < 12 && currentTime.Hour > 4)
             {
-                Console.WriteLine("Good morning!");
+                Console.WriteLine("Good Morning!");
             }
 
             else if (currentTime.Hour > 12 && currentTime.Hour < 15)
